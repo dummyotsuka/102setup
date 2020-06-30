@@ -56,7 +56,8 @@ yum -y install xrdp
 yum -y install tigervnc-server
 systemctl enable xrdp
 
-systemctl set-default graphical.target 
+systemctl set-default graphical.target
+systemctl disable firewalld
 
 shutdown -h now
 
