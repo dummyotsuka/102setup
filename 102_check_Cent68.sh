@@ -45,31 +45,62 @@ echo  LAB2_start >> $gamen
 echo  LAB2_start
 echo  LAB2_start 1>&2
 
-system-config-users &
-pkill system-config-users
+touch script1.sh
+echo '#!/bin/sh' >> script1.sh
+echo '' >> script1.sh
+echo 'tmpdir="/tmp"' >> script1.sh
+echo 'cmdpath="/bin"' >> script1.sh
+echo 'if  test  $#  -eq  1' >> script1.sh
+echo 'then' >> script1.sh
+echo 'echo  "実行前の/tmpの確認 ：" ; ls  $tmpdir  |  grep  $1' >> script1.sh
+echo '$cmdpath/mkdir  $tmpdir/$1' >> script1.sh
+echo 'echo  "実行後の/tmpの中身 ："; ls  -ld  $tmpdir/$1' >> script1.sh
+echo 'else' >> script1.sh
+echo 'echo  "作成したいディレクトリ名を1つ指定してください"' >> script1.sh
+echo 'fi' >> script1.sh
+chmod  +x  script1.sh
+./script1.sh  testdir
 
-#GUIの代わりです
-useradd user1
-passwd user1 --stdin << E
-ngn-sf
-ngn-sf
-E
+touch script2.sh
+echo '#!/bin/sh' >> script2.sh
+echo '' >> script2.sh
+echo 'echo  \"Hello!\"' >> script2.sh
+chmod  +x  script2.sh
+./script2.sh
 
-#GUIの代わりです
-groupadd linux
-usermod -G linux user1
+touch script3.sh
+echo '#!/bin/sh' >> script3.sh
+echo '' >> script3.sh
+echo 'echo  "引数の文字列は $1 です。"' >> script3.sh
+chmod  +x  script3.sh
+./script3.sh  test
 
-useradd  user2
-passwd  --stdin user2 << E
-ngn-sf
-ngn-sf
-E
+touch script4.sh
+echo '#!/bin/sh' >> script4.sh
+echo '' >> script4.sh
+echo 'if  test  -f  /tmp/hit.txt' >> script4.sh
+echo 'then' >> script4.sh
+echo 'echo  "Hit!"' >> script4.sh
+echo 'else' >> script4.sh
+echo 'echo  "ファイルがありませんでした。"' >> script4.sh
+echo 'fi' >> script4.sh
+chmod  +x  script4.sh
+touch  /tmp/hit.txt
+./script4.sh
+rm -f /tmp/hit.txt 
+./script4.sh
 
-groupadd  lpic
-usermod  -G  lpic  user2
-cat  /etc/group  |  grep  lpic
-cat  /etc/passwd  |  grep  ^root  |  tee  kekka.txt
-
+touch script5.sh
+echo '#!/bin/sh' >> script5.sh
+echo '' >> script5.sh
+echo 'for  i  in  `seq  1  5`' >> script5.sh
+echo 'do' >> script5.sh
+echo 'touch  $1$i' >> script5.sh
+echo 'echo  "$1$i 作成しました"' >> script5.sh
+echo 'done' >> script5.sh
+echo 'ls  -l  $1*' >> script5.sh
+chmod  +x  script5.sh
+./script5.sh  test
 
 
 echo  LAB3_start >> $gamen
