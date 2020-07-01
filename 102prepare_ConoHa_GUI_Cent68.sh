@@ -62,5 +62,7 @@ sed -i -e s/id:3:initdefault:/id:5:initdefault:/ /etc/inittab
 
 rm -f /etc/udev/rules.d/70-persistent-net.rules
 
+yum -y install sshpass
+
 #起動前にOSイメージを取ること(上記MACアドレスファイルの都合)
 shutdown -h now
