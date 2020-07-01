@@ -36,15 +36,9 @@ echo  LAB1_start >> $gamen
 echo  LAB1_start
 echo  LAB1_start 1>&2
 
-runlevel
-sed -i -e s/id:5:initdefault:/id:3:initdefault:/ /etc/inittab
-runlevel
-init 5
-sed -i -e s/id:3:initdefault:/id:5:initdefault:/ /etc/inittab
-#shutdownはチェックツール内では実施しない
-#shutdown -r now
-
-dmesg  |  grep  error
+#Windowsからリモートデスクトップ接続を実施するラボとする
+service xrdp start
+chkconfig xrdp on
 
 
 echo  LAB2_start >> $gamen
