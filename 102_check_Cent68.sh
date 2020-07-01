@@ -107,34 +107,10 @@ echo  LAB3_start >> $gamen
 echo  LAB3_start
 echo  LAB3_start 1>&2
 
-cat  /etc/passwd  |  grep  ^root  |  tee  kekka.txt
-cat  kekka.txt
-
-touch test1.txt
-echo "ngn" >> test1.txt
-echo "ngnsf" >> test1.txt
-echo "ngnss" >> test1.txt
-echo "ngnfs" >> test1.txt
-echo "nginx" >> test1.txt
-
-touch test2.txt
-echo "com" >> test2.txt
-echo "acom" >> test2.txt
-echo "compass" >> test2.txt
-echo "coom" >> test2.txt
-echo "cooom" >> test2.txt
-echo "caaam" >> test2.txt
-
-grep ^n.[sn]$ test1.txt
-grep ^n.[sn] test1.txt
-grep ^n..[^f]s$ test1.txt
-
-grep ^c...m$  test2.txt
-grep ^co*m$  test2.txt
-grep ^c[^o]*m$  test2.txt
-grep ^c.m  test2.txt
-grep c.m  test2.txt
-
+ifconfig
+ping  -c 2 8.8.8.8
+ping  -c 2 172.16.123.123
+route
 
 echo  LAB4_start >> $gamen
 echo  LAB4_start
