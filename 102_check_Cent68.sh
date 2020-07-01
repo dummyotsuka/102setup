@@ -116,70 +116,17 @@ echo  LAB4_start >> $gamen
 echo  LAB4_start
 echo  LAB4_start 1>&2
 
-ls  -l  /etc
-touch  /tmp/access.txt
-ls  -l  /tmp/access.txt
-echo  "I am root"  >  /tmp/access.txt
-cat  /tmp/access.txt
-#su  -  user1
-su -l user1 -c 'echo  "I am user1"  >>  /tmp/access.txt'
-su -l user1 -c 'cat  /tmp/access.txt'
-chmod  o+w  /tmp/access.txt
-ls  -l  /tmp/access.txt
-su -l user1 -c 'echo  "I am user1"  >>  /tmp/access.txt'
-chown  user1:linux  /tmp/access.txt
-ls  -l  /tmp/access.txt
 
-useradd  george
-passwd  george --stdin << E
-ngn-sf
-ngn-sf
-E
-useradd henry
-passwd  henry --stdin << E
-ngn-sf
-ngn-sf
-E
-useradd alan
-passwd  alan --stdin << E
-ngn-sf
-ngn-sf
-E
-useradd frank
-passwd  frank --stdin << E
-ngn-sf
-ngn-sf
-E
+#ssh 192.168.122.73
+sshpass -p ngn-sf1234GO ssh -oStrictHostKeyChecking=no 127.0.0.1
+whoami
+exit
 
+#ssh  192.168.122.73 -l user1
+sshpass -p ngn-sf ssh  -oStrictHostKeyChecking=no 127.0.0.1 -l user1
+whoami
+exit
 
-touch  /tmp/shared-file
-ls  -l  /tmp/shared-file
-touch  /tmp/ngn-file
-ls  -l  /tmp/ngn-file
-groupadd  holdings
-usermod  -G  holdings  george
-usermod  -G  holdings  frank
-usermod  -G  holdings  alan
-tail  -1  /etc/group
-groupadd  ngn
-usermod  -G  ngn,holdings frank
-usermod  -G  ngn  henry
-tail  -2  /etc/group
-chgrp  holdings  /tmp/shared-file
-chmod  g+rw  /tmp/shared-file
-ls  -l  /tmp/shared-file
-su -l alan -c 'echo  "I am alan"  >>  /tmp/shared-file'
-su -l alan -c 'cat  /tmp/shared-file'
-su -l henry -c 'echo  "I am henry"  >>  /tmp/shared-file'
-su -l henry -c 'cat  /tmp/shared-file'
-chgrp  ngn  /tmp/ngn-file
-chmod  g+rw  /tmp/ngn-file
-chmod  o-r  /tmp/ngn-file
-ls  -l  /tmp/ngn-file
-su -l henry -c 'echo  "I am henry"  >>  /tmp/ngn-file'
-su -l henry -c 'cat  /tmp/ngn-file'
-su -l alan -c 'echo  "I am alan"  >>  /tmp/ngn-file'
-su -l alan -c 'cat  /tmp/ngn-file'
 
 
 echo  LAB5_start >> $gamen
