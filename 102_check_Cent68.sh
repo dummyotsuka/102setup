@@ -127,6 +127,8 @@ sshpass -p ngn-sf ssh  -oStrictHostKeyChecking=no 127.0.0.1 -l user1
 whoami
 exit
 
+#PermitRootLogin noはチェックツールが止まるので実施なし
+#◆記載中
 
 
 echo  LAB5_start >> $gamen
