@@ -6,6 +6,13 @@ passwd lpic --stdin << E
 ngn-sf
 ngn-sf
 E
+
+useradd user1
+passwd user1 --stdin << E
+ngn-sf
+ngn-sf
+E
+
 yum -y install xclock
 yum -y install git
 yum -y install gcc
