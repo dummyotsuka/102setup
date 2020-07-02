@@ -194,6 +194,8 @@ iptables  -D  INPUT  -p  tcp  --dport  80  -j  DROP
 iptables  -L
 wget -T 3 --tries=1 http://127.0.0.1/test.html
 
+#gpgは手動で確認すること
+gpg --version
 
 #間違って下の行を消さないように！(標準出力の初期化)
 
