@@ -151,6 +151,9 @@ cat /var/log/lab5_log
 
 echo "*.*    				@$cent7address" >>   /etc/rsyslog.conf
 service  rsyslog  restart
+logger  "This is test log 1"
+logger  "This is test log 2"
+logger  "This is test log 3"
 
 
 echo  LAB6_start >> $gamen
