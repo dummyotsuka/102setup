@@ -116,20 +116,9 @@ echo  LAB4_start >> $gamen
 echo  LAB4_start
 echo  LAB4_start 1>&2
 
-
-#ssh 192.168.122.73
-#sshpass -p ngn-sf1234GO ssh -oStrictHostKeyChecking=no 127.0.0.1
-#whoami
-#exit
-
-#ssh  192.168.122.73 -l user1
-sshpass -p ngn-sf ssh  -oStrictHostKeyChecking=no 127.0.0.1 -l user1
-whoami
-exit
-
-#PermitRootLogin noはチェックツールが止まるのでツールでの実施なし(ときどき手動で確認すること)
-#PasswordAuthentication  noはチェックツールが止まるのでツールでの実施なし(ときどき手動で確認すること)
-#SSH port forwardingはGUIないのでツールでの実施なし(ときどき手動で確認すること)
+export ANSIBLE_HOST_KEY_CHECKING=False
+export ANSIBLE_CONFIG=127.0.0.1
+ansible -i hosts 127.0.0.1 -a 'hostname'
 
 echo  LAB5_start >> $gamen
 echo  LAB5_start
