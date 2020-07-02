@@ -116,6 +116,15 @@ echo  LAB4_start >> $gamen
 echo  LAB4_start
 echo  LAB4_start 1>&2
 
+myip="`(hostname | cut -d '-' -f 2)`.`( hostname | cut -d '-' -f 3)`.`( hostname | cut -d '-' -f 4)`.`( hostname | cut -d '-' -f 5)`"
+echo $myip
+echo $myip >> /etc/ansible/hosts
+ansible $myip -m ping -k
+
+echo $cent7address
+echo $cent7address >> /etc/ansible/hosts
+ansible $cent7address -m ping -k
+
 #ssh 192.168.122.73
 #ssh  192.168.122.73 -l user1
 #PermitRootLogin noはチェックツールが止まるのでツールでの実施なし(ときどき手動で確認すること)
