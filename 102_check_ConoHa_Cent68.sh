@@ -116,9 +116,11 @@ echo  LAB4_start >> $gamen
 echo  LAB4_start
 echo  LAB4_start 1>&2
 
-export ANSIBLE_HOST_KEY_CHECKING=False
-export ANSIBLE_CONFIG=127.0.0.1
-ansible -i hosts 127.0.0.1 -a 'hostname'
+#ssh 192.168.122.73
+#ssh  192.168.122.73 -l user1
+#PermitRootLogin noはチェックツールが止まるのでツールでの実施なし(ときどき手動で確認すること)
+#PasswordAuthentication  noはチェックツールが止まるのでツールでの実施なし(ときどき手動で確認すること)
+#SSH port forwardingはGUIないのでツールでの実施なし(ときどき手動で確認すること)
 
 echo  LAB5_start >> $gamen
 echo  LAB5_start
