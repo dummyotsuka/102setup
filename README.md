@@ -15,4 +15,4 @@ LPI102用仮想マシンをCentOS6.8(64bit)をConoHaVPSのデフォルトから�
 ###### conoha(CentOS72)
 
 ###### conoha(CentOS68)
-<pre> export -p "Type Centos7's IP address" cent7address; export gamen=`tty`; curl -s    https://raw.githubusercontent.com/dummyotsuka/102setup/master/102_check_ConoHa_Cent68.sh   | sh </pre>
+<pre> export -p "Type Centos7's IP address" cent7address; export cent7address; export gamen=`tty`; curl -s    https://raw.githubusercontent.com/dummyotsuka/102setup/master/102_check_ConoHa_Cent68.sh   | sh </pre>
