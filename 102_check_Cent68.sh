@@ -146,6 +146,10 @@ logger  -p  local5.crit  "This is critical log"
 #tail  -f  /var/log/lab5_log 
 cat /var/log/lab5_log
 
+echo "*.*    				@$cent7address" >>   /etc/rsyslog.conf
+service  rsyslog  restart
+
+
 echo  LAB6_start >> $gamen
 echo  LAB6_start
 echo  LAB6_start 1>&2
