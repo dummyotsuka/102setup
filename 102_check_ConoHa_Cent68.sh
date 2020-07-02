@@ -154,29 +154,33 @@ service  rsyslog  restart
 logger  "This is test log 1"
 logger  "This is test log 2"
 logger  "This is test log 3"
+ansible $cent7address -a　"cat /var/log/test.log"
 
+date
+date  0214120471
+date
+
+hwclock  -w
+ntpdate ntp.nict.go.jp
+hwclock  -w
+hwclock  --show
+
+echo "*  *  *  *  *  date > /dev/pts/0" > /var/spool/cron/root
+at
 
 echo  LAB6_start >> $gamen
 echo  LAB6_start
 echo  LAB6_start 1>&2
 
-echo  "This is hardlink test."  >  link.txt
-cat  link.txt
-ln  link.txt  link1.txt
-ls  -il  link*
-cat  link1.txt
-rm  link.txt
-cat  link1.txt
-rm  link1.txt
-echo  "This is symboliclink.test."  >  slink.txt
-cat  slink.txt
-ln  -s  slink.txt  slink1.txt
-ls  -il  slink*
-cat  slink1.txt
-rm  slink.txt
-ls  -il  slink*
-cat slink1.txt
-rm  slink1.txt
+useradd  sudo_user
+passwd  sudo_user --stdin << E
+sudo_user
+sudo_user
+E
+
+su -l sudo_user -c "/sbin/shutdown  -r  1000"
+echo "sudo_user       ALL=(ALL)       /sbin/shutdown  -r  1000" >> /etc/sudoers
+su -l sudo_user -c "sudo /sbin/shutdown  -r  1000"
 
 
 #間違って下の行を消さないように！(標準出力の初期化)
