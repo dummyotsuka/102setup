@@ -116,6 +116,9 @@ echo  LAB4_start >> $gamen
 echo  LAB4_start
 echo  LAB4_start 1>&2
 
+echo 'Host *' >> ~/.ssh/config  
+echo 'StrictHostKeyChecking no' >> ~/.ssh/config  
+
 myip="`(hostname | cut -d '-' -f 2)`.`( hostname | cut -d '-' -f 3)`.`( hostname | cut -d '-' -f 4)`.`( hostname | cut -d '-' -f 5)`"
 echo $myip
 echo $myip >> /etc/ansible/hosts
