@@ -135,8 +135,16 @@ echo  LAB5_start >> $gamen
 echo  LAB5_start
 echo  LAB5_start 1>&2
 
-
-
+touch  /var/log/lab5_log
+echo 'local5.=error                                                 /var/log/lab5_log' >>   /etc/rsyslog.conf
+service  rsyslog  restart
+#tail  -f  /var/log/lab5_log
+logger  -p  local5.error  "This is error log"
+logger  -p  local5.info  "This is info log"
+logger  -p  local5.warning  "This is warning log"
+logger  -p  local5.crit  "This is critical log"
+#tail  -f  /var/log/lab5_log 
+cat /var/log/lab5_log
 
 echo  LAB6_start >> $gamen
 echo  LAB6_start
