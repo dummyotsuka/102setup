@@ -127,37 +127,15 @@ sshpass -p ngn-sf ssh  -oStrictHostKeyChecking=no 127.0.0.1 -l user1
 whoami
 exit
 
-#PermitRootLogin noはチェックツールが止まるので実施なし
-#◆記載中
-
+#PermitRootLogin noはチェックツールが止まるのでツールでの実施なし(ときどき手動で確認すること)
+#PasswordAuthentication  noはチェックツールが止まるのでツールでの実施なし(ときどき手動で確認すること)
+#SSH port forwardingはGUIないのでツールでの実施なし(ときどき手動で確認すること)
 
 echo  LAB5_start >> $gamen
 echo  LAB5_start
 echo  LAB5_start 1>&2
 
-#/dev/vda3は300KBしか確保できなかった。
-#セットアップで作成した/tmp/dev/sda6などを追加ディスクとみなす
 
-mke2fs  /dev/vda3
-mkdir  /linux-filesys1
-ls  -l  /linux-filesys1
-mount  /dev/vda3  /linux-filesys1/
-mount
-echo  “filesystem test”  >>  /linux-filesys1/testfile.txt
-cat  /linux-filesys1/testfile.txt
-echo "/dev/vda3  /linux-filesys1 ext2 defaults 0 0" >> /etc/fstab
-umount  /linux-filesys1
-tune2fs  -j  /dev/vda3
-mount  /dev/vda3  /linux-filesys1
-mount
-mkfs.ext4 /tmp/dev/sda7 << E
-y
-E
-mkdir  /linux-filesys2
-ls  -l  /linux-filesys2
-mount  -o loop /tmp/dev/sda7  /linux-filesys2
-echo "/tmp/dev/sda7  /linux-filesys2 ext4 defaults 0 0" >> /etc/fstab
-echo  “filesystem test”  >>  /linux-filesys2/testfile.txt
 
 
 echo  LAB6_start >> $gamen
