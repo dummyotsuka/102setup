@@ -182,6 +182,18 @@ su -l sudo_user -c "/sbin/shutdown  -r  1000"
 echo "sudo_user       ALL=(ALL)       /sbin/shutdown  -r  1000" >> /etc/sudoers
 su -l sudo_user -c "sudo /sbin/shutdown  -r  1000"
 
+service  httpd  start
+echo  "This is test.html"  >  /var/www/html/test.html
+cat  /var/www/html/test.html
+wget -T 3 --tries=1 http://127.0.0.1/test.html
+iptables  -A  INPUT  -p  tcp  --dport  80  -j  DROP
+iptables  -L
+ping -c 2 127.0.0.1
+wget -T 3 --tries=1 http://127.0.0.1/test.html
+iptables  -D  INPUT  -p  tcp  --dport  80  -j  DROP
+iptables  -L
+wget -T 3 --tries=1 http://127.0.0.1/test.html
+
 
 #間違って下の行を消さないように！(標準出力の初期化)
 
