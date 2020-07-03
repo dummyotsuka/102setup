@@ -8,8 +8,10 @@ LPI102用仮想マシンをCentOS6.8(64bit)をConoHaVPSのデフォルトから�
 通常は新規サーバ作成追加画面から『保存イメージ』⇒『LPI102_image_Cent68_GUI』で構築(CentOS6.8)
 
 ##### prepare
-<pre> export gamen=`tty`; curl -s  https://raw.githubusercontent.com/dummyotsuka/102setup/master/102prepare_ConoHa_GUI_Cent68.sh   | sh ;  </pre>
+###### conoha(CentOS72)
 <pre> export gamen=`tty`; curl -s  https://raw.githubusercontent.com/dummyotsuka/102setup/master/102prepare_ConoHa_GUI_Cent72.sh   | sh ;  </pre>
+###### conoha(CentOS68)
+<pre> export gamen=`tty`; curl -s  https://raw.githubusercontent.com/dummyotsuka/102setup/master/102prepare_ConoHa_GUI_Cent68.sh   | sh ;  </pre>
 
 ##### check
 ###### conoha(CentOS72)
