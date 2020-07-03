@@ -20,8 +20,8 @@ echo  LAB5_syslog_start >> $gamen
 echo  LAB5_syslog_start
 echo  LAB5_syslog_start 1>&2
 
-sed -i -e s/#$ModLoad imudp/$ModLoad imudp/ /etc/rsyslog.conf
-sed -i -e s/#$UDPServerRun 514/$UDPServerRun 514/ /etc/rsyslog.conf
+sed -i -e s/#$ModLoad/$ModLoad/ /etc/rsyslog.conf
+sed -i -e s/#$UDPServerRun/$UDPServerRun/ /etc/rsyslog.conf
 touch  /var/log/test.log
 echo "user.*                                                  /var/log/test.log" >> /etc/rsyslog.conf
 systemctl restart rsyslog
