@@ -55,6 +55,7 @@ yum -y install epel-release
 yum -y install xrdp
 yum -y install tigervnc-server
 systemctl enable xrdp
+yum -y install ansible
 
 systemctl set-default graphical.target
 systemctl disable firewalld
