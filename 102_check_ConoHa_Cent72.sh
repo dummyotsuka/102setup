@@ -15,6 +15,12 @@ echo  LAB0_test_start >> $gamen
 echo  LAB0_test__start
 echo  LAB0_test__start 1>&2
 
+echo  LAB1_test_start >> $gamen
+echo  LAB1_test__start
+echo  LAB1_test__start 1>&2
+
+systemctl start xrdp
+systemctl enable xrdp
 
 echo  LAB5_syslog_start >> $gamen
 echo  LAB5_syslog_start
