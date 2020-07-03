@@ -5,7 +5,8 @@
 
 ## usage(GUIあり)
 LPI102用仮想マシンをCentOS6.8(64bit)をConoHaVPSのデフォルトから作る場合はprepareを実施。  
-通常は新規サーバ作成追加画面から『保存イメージ』⇒『LPI102_image_Cent68_GUI』で構築(CentOS6.8)
+通常は新規サーバ作成追加画面から『保存イメージ』⇒『LPI102_Cent68』で構築(CentOS6.8)
+　　　　　　　　　　　　　　　　『保存イメージ』⇒『LPI102_Cent72』で構築(CentOS7.2)
 
 ##### prepare
 ###### conoha(CentOS72)
