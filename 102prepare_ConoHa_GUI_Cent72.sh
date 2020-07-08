@@ -67,6 +67,8 @@ yum -y install ansible
 systemctl set-default graphical.target
 systemctl disable firewalld
 
+echo "export LANG=ja_JP.UTF-8" >> /etc/bashrc
+
 shutdown -h now
 
 
