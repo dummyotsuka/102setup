@@ -67,6 +67,8 @@ cp km-e0010411.ini /etc/xrdp/km-e0210411.ini
 
 sed -i -e s/id:3:initdefault:/id:5:initdefault:/ /etc/inittab
 
+echo "export LANG=ja_JP.UTF-8" >> /etc/bashrc
+
 rm -f /etc/udev/rules.d/70-persistent-net.rules
 
 yum -y install ansible
